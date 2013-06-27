@@ -5,11 +5,13 @@ A couple of programming exercises for CO+LAB.
 
 ## Iteration
 
-After sitting for about an hour in the computer, I finally figured this out. No Google, I promise! Basically, I went the recurrsion route, passing a long a list of the parent keywords and when there was no more child anymore, that meant that the combination was finished and was then added to an array. I then tested both methods (Manual and Programatic) to see if they matched.
+After sitting for about an hour in the computer, I finally figured this out. No Google, I promise! Basically, I went the recursion route, passing a long a list of the parent keywords and when there was no more child anymore, that meant that the combination was finished and was then added to an array. After it finishes, the script tests and compares both methods (Manual and Programmatic) to see if they match.
 
 I bet there's an easier way to do it, but that's who I figured it out.
 
-	def superFunction(options, level, listOfoptions):
+Here's the function:
+
+	def superFunction(options):
 	    global finalListOfOptions
 	    finalListOfOptions   = []
 	    def goThroughEachOne(options, level, listOfoptions):
@@ -27,12 +29,12 @@ I bet there's an easier way to do it, but that's who I figured it out.
 	            finalListOfOptions.append([])
 	            finalListOfOptions[len(finalListOfOptions) - 1].extend(listOfoptions)
 
-	    goThroughEachOne(options, level, listOfoptions)
+	    goThroughEachOne(options, 0, [])
 	    return finalListOfOptions
 
 ## Radius
 
-I was a little scared of this one yesterday, but thinking about it yesterday night I figured the answer was quite simple. Given that the diameter is nothing more than an infinite number of lines at distance R (radius), then the radius would always be greater than the distance of the point to any given point insinde the circle. I'm not now sure if that was the quesiton I was being asked, so I apologize if I answered an easier question than the one given to me. Google helped me confirm if what I was thinking was right: <http://stackoverflow.com/questions/481144/equation-for-testing-if-a-point-is-inside-a-circle>.
+I was a little scared of this one yesterday, but thinking about it yesterday night I figured the answer was quite simple. Given that the diameter is nothing more than an infinite number of lines at distance R (radius), then the radius would always be greater than the distance of the point to any given point inside the circle. I'm not now sure if that was the question I was being asked, so I apologize if I answered an easier question than the one given to me. Google helped me confirm if what I was thinking was right: <http://stackoverflow.com/questions/481144/equation-for-testing-if-a-point-is-inside-a-circle>.
 
 The python version is ok, but it's not that interesting, so I made a [Processing](http://processing.org/) example. To view that one you have to download the Processing software or you can see a canvas based HTML5 version here: <http://thejsj.com/2013/colab/Radius/Radius-Processing/web-export/>. In this example, there is a point class with and X and Y variable and a BasePoint class with a radius. If the point is within the diameter of that circle (drawn with a red stroke), then the script draw an ellipse around the point. It's interactive so you can change the radius or the position of the BasePoint with the mouse.
 
@@ -44,9 +46,9 @@ http://thejsj.com/2013/colab/Radius/Radius-Processing/web-export/
 
 ## Image Resize
 
-At 100 lines of code this is the longest one of all the excercise, yet I really leaned on PIL to do most of the complicated stuff. 
+At 100 lines of code this is the longest one of all the exercise, yet I really leaned on PIL to do most of the complicated stuff. 
 
-I created a simple command line interface for specifing width, height, if the images will be cropped and directory. So a command for the script would look something like this: 
+I created a simple command line interface for specifying width, height, if the images will be cropped and directory. So a command for the script would look something like this: 
 
 	python imageResize.py --height 200 --width 200 --crop --resize
 
@@ -71,7 +73,7 @@ If both, height AND width are given without the --crop flag, the images are resi
 
 		python imageResize.py --height 200 --width 200 --resize
 
-If both, heigh AND width are provided without the --crop flag, the images will be resized to that specifid height and width, cropping everything else. Example command: 
+If both, height AND width are provided without the --crop flag, the images will be resized to that specified height and width, cropping everything else. Example command: 
 
 	python imageResize.py --height 200 --width 200 --crop --resize
 
@@ -83,4 +85,4 @@ If the user doesn't provide either width or height, the script throws an error:
 
 If the user provides only width or height, but adds the --crop flag, the script throw and error:
 
-	raise Exception("ERROR: crop enabled but WIDTH or HEIGHT are not specified. For croping images, BOTH must be specified.")
+	raise Exception("ERROR: crop enabled but WIDTH or HEIGHT are not specified. For cropping images, BOTH must be specified.")

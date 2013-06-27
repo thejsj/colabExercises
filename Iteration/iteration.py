@@ -21,7 +21,7 @@ for option1 in options[0]:
                             count_1 += 1
 print count_1
 # Programatic Way
-def superFunction(options, level, listOfoptions):
+def superFunction(options):
     global finalListOfOptions
     finalListOfOptions   = []
     def goThroughEachOne(options, level, listOfoptions):
@@ -39,9 +39,9 @@ def superFunction(options, level, listOfoptions):
             finalListOfOptions.append([])
             finalListOfOptions[len(finalListOfOptions) - 1].extend(listOfoptions)
 
-    goThroughEachOne(options, level, listOfoptions)
+    goThroughEachOne(options, 0, [])
     return finalListOfOptions
-finalListOfOptions = superFunction(options, 0, [])
+finalListOfOptions = superFunction(options)
 # Testing
 for combination in finalListOfOptions:
     print combination
@@ -50,3 +50,5 @@ print len(finalListOfOptions)
 print "Length on Manual One: ", count_1 , " - superFunction: ", len(finalListOfOptions)
 if(count_1 == len(finalListOfOptions)):
     print "Congratulations, Jorge. You figured it out without crying!"
+else:
+    print "No Match :("
