@@ -19,7 +19,7 @@ Again, this wasn't really too hard, so I apologize if this wasn't the question.
 
 ### Live Online Example:
 
-	<http://thejsj.com/2013/colab/Radius/Radius-Processing/web-export/>
+http://thejsj.com/2013/colab/Radius/Radius-Processing/web-export/
 
 ## Image Resize
 
