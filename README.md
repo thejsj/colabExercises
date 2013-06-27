@@ -9,6 +9,27 @@ After sitting for about an hour in the computer, I finally figured this out. No 
 
 I bet there's an easier way to do it, but that's who I figured it out.
 
+	def superFunction(options, level, listOfoptions):
+	    global finalListOfOptions
+	    finalListOfOptions   = []
+	    def goThroughEachOne(options, level, listOfoptions):
+	        global finalListOfOptions
+	        if(level < len(options)):
+	            # print "Option Exists - ", level
+	            for option in options[level]:
+	                try:
+	                    listOfoptions[level] = (option)
+	                except:
+	                    listOfoptions.append(option)
+	                goThroughEachOne(options, level + 1, listOfoptions)
+	        else:
+	            # This is probably the ugliest part of the whole thing, but, for some reason. .append(listOfoptions) wasn't working for me
+	            finalListOfOptions.append([])
+	            finalListOfOptions[len(finalListOfOptions) - 1].extend(listOfoptions)
+
+	    goThroughEachOne(options, level, listOfoptions)
+	    return finalListOfOptions
+
 ## Radius
 
 I was a little scared of this one yesterday, but thinking about it yesterday night I figured the answer was quite simple. Given that the diameter is nothing more than an infinite number of lines at distance R (radius), then the radius would always be greater than the distance of the point to any given point insinde the circle. I'm not now sure if that was the quesiton I was being asked, so I apologize if I answered an easier question than the one given to me. Google helped me confirm if what I was thinking was right: <http://stackoverflow.com/questions/481144/equation-for-testing-if-a-point-is-inside-a-circle>.
