@@ -8,7 +8,7 @@ options = [
     ["leather","plastic","wood"],
     ["more otpions","even more options","way too many options"]
 ]
-
+# Manual Way
 count_1 = 0
 for option1 in options[0]: 
     for option2 in options[1]: 
@@ -20,7 +20,7 @@ for option1 in options[0]:
                             print option1, "-", option2, "-",option3,"-",option4,"-",option5,"-",option6, "-",option7
                             count_1 += 1
 print count_1
-
+# Programatic Way
 def superFunction(options, level, listOfoptions):
     global finalListOfOptions
     finalListOfOptions   = []
@@ -41,8 +41,8 @@ def superFunction(options, level, listOfoptions):
 
     goThroughEachOne(options, level, listOfoptions)
     return finalListOfOptions
-
 finalListOfOptions = superFunction(options, 0, [])
+# Testing
 for combination in finalListOfOptions:
     print combination
 print len(finalListOfOptions)
