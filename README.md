@@ -3,7 +3,7 @@ CO+LAB - Exercises
 
 A couple of programming exercises for CO+LAB.
 
-## Iteration
+## Combinations
 
 After sitting for about an hour in the computer, I finally figured this out. No Google, I promise! Basically, I went the recursion route, passing a long a list of the parent keywords and when there was no more child anymore, that meant that the combination was finished and was then added to an array. After it finishes, the script tests and compares both methods (Manual and Programmatic) to see if they match.
 
